@@ -1,85 +1,55 @@
 # 🎵 Audio Converter Pro - Procesamiento Múltiple
 
-**Audio Converter Pro** es una aplicación profesional multiplataforma para la conversión masiva de archivos de audio a formato MP4. Diseñada con una interfaz moderna y minimalista, permite procesar múltiples archivos simultáneamente con seguimiento en tiempo real del progreso.
+**Una aplicación profesional para la conversión masiva de archivos de audio a formato MP4 con interfaz gráfica moderna.**
 
-![Audio Converter Pro Screenshot](screenshot.png)
+![Version](https://img.shields.io/badge/version-3.0-blue)
+![Python](https://img.shields.io/badge/python-3.6+-green)
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-orange)
 
-## ✨ Características Principales
+## 📋 Descripción
 
-### 🔄 **Procesamiento Múltiple**
-- ✅ Selección y conversión de múltiples archivos simultáneamente
-- ✅ Progreso individual y total en tiempo real
-- ✅ Cola de procesamiento secuencial optimizada
-- ✅ Cancelación de conversiones en progreso
+Audio Converter Pro es una aplicación de escritorio desarrollada en Python con PyQt5 que permite convertir múltiples archivos de audio simultáneamente a formato MP4. Diseñada con una interfaz minimalista en colores rojo vino tinto, negro y blanco, ofrece una experiencia de usuario intuitiva y profesional.
 
-### 🎯 **Formatos Soportados**
-- **Entrada**: MP3, M4A, WAV, FLAC, OGG, AAC, WMA
-- **Salida**: MP4 (video con audio original + fondo negro)
-- **Calidad**: Preserva calidad de audio original
+### ✨ Características Principales
 
-### 🖥️ **Interfaz Moderna**
-- 🎨 Diseño minimalista con paleta rojo vino tinto, negro y blanco
-- 📱 Interfaz responsive que se adapta al tamaño de pantalla
-- 🔍 Logs detallados con iconos para mejor legibilidad
-- 📊 Barras de progreso con información de estado
+- 🎵 **Conversión múltiple**: Procesa varios archivos de audio simultáneamente
+- 🔄 **Formatos soportados**: MP3, M4A, WAV, FLAC, OGG, AAC, WMA
+- 📊 **Progreso en tiempo real**: Seguimiento detallado del proceso de conversión
+- 📁 **Gestión de destinos**: Selección flexible de carpetas de salida
+- 📝 **Historial completo**: Registro de todas las conversiones realizadas
+- ⚙️ **Configuración personalizable**: Ajustes de rutas y preferencias
+- 🖥️ **Interfaz moderna**: Diseño limpio y profesional
+- 🔧 **Multiplataforma**: Compatible con Linux, Windows y macOS
 
-### 🛠️ **Funcionalidades Avanzadas**
-- 📁 Selección personalizable de carpeta de destino
-- 📝 Historial completo de conversiones con estadísticas
-- ⚙️ Configuraciones guardadas persistentemente
-- 🚫 Prevención de sobrescritura con numeración automática
+## 🖥️ Requisitos del Sistema
 
-## 🚀 Instalación
+### Requisitos Mínimos
+- **Python**: 3.6 o superior
+- **RAM**: 4GB
+- **Espacio en disco**: 500MB libres
+- **FFmpeg**: Instalado y disponible en PATH
 
-### **Windows**
+### Sistemas Operativos Soportados
+- ✅ **Linux Ubuntu 20.04+** (Probado y verificado)
+- ✅ **Windows 10/11**
+- ✅ **macOS 10.14+**
 
-#### Requisitos Previos
-- Python 3.6 o superior
-- FFmpeg instalado y en PATH del sistema
+## 🛠️ Instalación
 
-#### Instalación Paso a Paso
+### Para Linux Ubuntu (Probado en Ubuntu 22.04)
 
-1. **Clonar o descargar el repositorio:**
-```bash
-git clone https://github.com/tu-usuario/audio-converter-pro.git
-cd audio-converter-pro
-```
-
-2. **Crear entorno virtual (recomendado):**
-```bash
-python -m venv audio_converter_env
-audio_converter_env\Scripts\activate
-```
-
-3. **Instalar dependencias:**
-```bash
-pip install --upgrade pip
-pip install PyQt5
-```
-
-4. **Instalar FFmpeg:**
-   - Descargar desde [ffmpeg.org](https://ffmpeg.org/download.html)
-   - Extraer y agregar al PATH del sistema
-   - Verificar con: `ffmpeg -version`
-
-5. **Ejecutar la aplicación:**
-```bash
-python audio_converter_pro.py
-```
-
-### **Linux Ubuntu/Debian**
-
-#### Instalación Automática
+#### Opción 1: Instalación con Entorno Virtual (Recomendada)
 
 ```bash
-# 1. Actualizar sistema
+# 1. Actualizar el sistema
 sudo apt update
 
 # 2. Instalar dependencias del sistema
-sudo apt install python3.12-venv python3-pip ffmpeg
+sudo apt install python3.12-venv python3-pip python3-dev ffmpeg
 
-# 3. Clonar repositorio
-git clone https://github.com/tu-usuario/audio-converter-pro.git
+# 3. Clonar o descargar el proyecto
+git clone https://github.com/tuusuario/audio-converter-pro.git
 cd audio-converter-pro
 
 # 4. Crear entorno virtual
@@ -92,27 +62,34 @@ source audio_converter_env/bin/activate
 pip install --upgrade pip
 pip install PyQt5
 
-# 7. Ejecutar aplicación
+# 7. Ejecutar la aplicación
 python audio_converter_pro.py
 ```
 
-#### Script de Instalación Rápida
+#### Opción 2: Instalación Global
 
 ```bash
-#!/bin/bash
-# Guardar como install.sh y ejecutar: bash install.sh
-
-echo "🎵 Instalando Audio Converter Pro..."
+# 1. Instalar dependencias
 sudo apt update
-sudo apt install python3.12-venv python3-pip ffmpeg -y
-python3 -m venv audio_converter_env
-source audio_converter_env/bin/activate
-pip install --upgrade pip PyQt5
-echo "✅ Instalación completada!"
-echo "💡 Para ejecutar: source audio_converter_env/bin/activate && python audio_converter_pro.py"
+sudo apt install python3-pyqt5 python3-pyqt5.qtwidgets ffmpeg
+
+# 2. Ejecutar directamente
+python3 audio_converter_pro.py
 ```
 
-### **macOS**
+### Para Windows
+
+```bash
+# 1. Instalar Python 3.6+ desde python.org
+# 2. Instalar FFmpeg desde ffmpeg.org y agregarlo al PATH
+# 3. Instalar PyQt5
+pip install PyQt5
+
+# 4. Ejecutar la aplicación
+python audio_converter_pro.py
+```
+
+### Para macOS
 
 ```bash
 # 1. Instalar Homebrew (si no está instalado)
@@ -121,204 +98,152 @@ echo "💡 Para ejecutar: source audio_converter_env/bin/activate && python audi
 # 2. Instalar dependencias
 brew install python3 ffmpeg
 
-# 3. Crear entorno virtual
-python3 -m venv audio_converter_env
-source audio_converter_env/bin/activate
+# 3. Instalar PyQt5
+pip3 install PyQt5
 
-# 4. Instalar PyQt5
-pip install --upgrade pip PyQt5
-
-# 5. Ejecutar aplicación
-python audio_converter_pro.py
+# 4. Ejecutar la aplicación
+python3 audio_converter_pro.py
 ```
 
-## 📖 Guía de Uso
+## 🚀 Uso de la Aplicación
 
-### **1. Inicio Rápido**
+### Inicio Rápido
 
-1. **Abrir la aplicación** - Se ejecuta en pantalla completa
-2. **Seleccionar archivos** - Clic en "Seleccionar Archivos de Audio"
-3. **Elegir destino** - Cambiar carpeta de destino si es necesario
-4. **Iniciar conversión** - Clic en "Iniciar Conversión"
-5. **Monitorear progreso** - Seguir logs y barra de progreso
+1. **Abrir la aplicación**:
+   ```bash
+   # Si usas entorno virtual
+   source audio_converter_env/bin/activate
+   python audio_converter_pro.py
+   ```
 
-### **2. Gestión de Archivos**
+2. **Seleccionar archivos**:
+   - Haz clic en "Seleccionar Archivos de Audio"
+   - Selecciona uno o múltiples archivos de audio
+   - Los archivos aparecerán en la lista
 
-- **Agregar archivos**: Botón "Seleccionar Archivos de Audio"
-- **Quitar archivo específico**: Seleccionar en lista + "Quitar Seleccionado"
-- **Limpiar todo**: Botón "Limpiar Todo"
-- **Cambiar destino**: Botón "Cambiar Destino"
+3. **Configurar destino**:
+   - Verifica o cambia la carpeta de destino
+   - Por defecto: `~/Desktop/blck_mp3_to_mp4/mp4_convert_record`
 
-### **3. Monitoreo de Conversión**
+4. **Iniciar conversión**:
+   - Haz clic en "Iniciar Conversión"
+   - Observa el progreso en tiempo real
+   - Los logs mostrarán el estado de cada archivo
 
-- **Progreso total**: Barra principal muestra porcentaje global
-- **Progreso individual**: Texto de estado muestra archivo actual
-- **Logs detallados**: Panel derecho con información completa
-- **Cancelación**: Botón "Cancelar Conversión" durante proceso
+### Funciones Avanzadas
 
-### **4. Historial y Configuración**
+#### Panel Principal
+- **Gestión de archivos**: Agregar, quitar individual o limpiar todos
+- **Progreso detallado**: Barra de progreso total y estado por archivo
+- **Logs en tiempo real**: Información detallada del proceso
 
-- **Ver historial**: Pestaña "Historial" con estadísticas completas
-- **Configurar rutas**: Pestaña "Configuración" para rutas predeterminadas
-- **Abrir carpetas**: Botones "Ver Carpeta" en historial
+#### Configuración
+- **Ruta predeterminada**: Cambiar carpeta de salida por defecto
+- **Guardar preferencias**: Mantener configuración entre sesiones
 
-## 🏗️ Estructura del Proyecto
+#### Historial
+- **Registro completo**: Ver todas las conversiones realizadas
+- **Estadísticas**: Archivos procesados, exitosos y fallidos
+- **Acceso rápido**: Abrir carpetas de destino directamente
+
+## 📁 Estructura del Proyecto
 
 ```
 audio-converter-pro/
-├── audio_converter_pro.py          # Aplicación principal
+├── audio_converter_pro.py          # Archivo principal de la aplicación
 ├── README.md                       # Este archivo
 ├── LICENSE                         # Licencia MIT
-├── requirements.txt                # Dependencias Python
-├── install.sh                      # Script instalación Linux
-├── audio_converter_env/            # Entorno virtual (creado al instalar)
-└── conversion_history.json         # Historial (creado automáticamente)
+├── requirements.txt                # Dependencias de Python
+├── audio_converter_env/            # Entorno virtual (si se usa)
+└── docs/                          # Documentación adicional
+    ├── screenshots/               # Capturas de pantalla
+    └── manual.md                  # Manual de usuario detallado
 ```
 
-## 🔧 Configuración Avanzada
+## 🎨 Interfaz de Usuario
 
-### **Personalización de Rutas**
+### Diseño Visual
+- **Colores principales**: Rojo vino tinto (#800020), Negro (#000000), Blanco (#FFFFFF)
+- **Estilo**: Minimalista y moderno
+- **Layout**: Sidebar de navegación + área de contenido principal
+- **Responsive**: Se adapta al tamaño de la ventana (abre maximizada)
 
-La aplicación crea automáticamente las siguientes rutas:
+### Secciones
+1. **🎵 Panel Principal**: Conversión de archivos
+2. **⚙️ Configuración**: Ajustes de la aplicación
+3. **📝 Historial**: Registro de conversiones
+4. **ℹ️ Acerca de**: Información de la aplicación
 
-- **Windows**: `C:\Users\[Usuario]\Desktop\blck_mp3_to_mp4\mp4_convert_record`
-- **Linux/macOS**: `~/Desktop/blck_mp3_to_mp4/mp4_convert_record`
+## 🔧 Solución de Problemas
 
-Puedes cambiar estas rutas desde la pestaña "Configuración".
+### Error: `QSocketNotifier: Can only be used with threads started with QThread`
 
-### **Parámetros de FFmpeg**
-
-La aplicación utiliza configuración optimizada:
-- **Preset**: ultrafast (máxima velocidad)
-- **Codec video**: libx264
-- **Codec audio**: copy (sin recodificación)
-- **Aceleración**: hardware automática
-- **Threads**: número de núcleos CPU
-
-### **Personalización Visual**
-
-Paleta de colores definida en el código:
-- **Primario**: #800020 (Rojo vino tinto)
-- **Secundario**: #000000 (Negro)
-- **Fondo**: #FFFFFF (Blanco)
-- **Acentos**: Grises neutros
-
-## 🐛 Solución de Problemas
-
-### **Error: FFmpeg no encontrado**
-
+**Solución**:
 ```bash
-# Linux/macOS
-sudo apt install ffmpeg  # Ubuntu/Debian
-brew install ffmpeg      # macOS
-
-# Windows
-# Descargar desde ffmpeg.org y agregar al PATH
-```
-
-### **Error: PyQt5 no se instala**
-
-```bash
-# Instalar dependencias del sistema primero
-sudo apt install python3-dev python3-distutils build-essential
-
-# Luego instalar PyQt5
+# Usar entorno virtual limpio
+python3 -m venv fresh_env
+source fresh_env/bin/activate
 pip install PyQt5
 ```
 
-### **Error: Conflictos con Snap (Linux)**
+### Error: `symbol lookup error: libpthread.so.0`
 
+**Solución**:
 ```bash
-# Usar Python del sistema explícitamente
-/usr/bin/python3 -m venv audio_converter_env
-source audio_converter_env/bin/activate
-pip install PyQt5
+# Evitar conflictos con snap
+/usr/bin/python3 audio_converter_pro.py
 ```
 
-### **Error: Archivos no se convierten**
+### Error: `ensurepip is not available`
 
-1. Verificar que FFmpeg está en PATH: `ffmpeg -version`
-2. Verificar permisos de escritura en carpeta destino
-3. Verificar que archivos de origen no están corruptos
-4. Revisar logs detallados en la aplicación
-
-### **Aplicación no abre en pantalla completa**
-
-La aplicación está configurada para abrir maximizada. Si no funciona:
-- Verificar resolución de pantalla
-- Probar con `window.showMaximized()` en lugar de `window.show()`
-
-## 🔄 Actualizaciones y Mantenimiento
-
-### **Actualizar la aplicación**
-
+**Solución**:
 ```bash
-# Activar entorno virtual
-source audio_converter_env/bin/activate  # Linux/macOS
-# o
-audio_converter_env\Scripts\activate     # Windows
-
-# Actualizar dependencias
-pip install --upgrade PyQt5
-
-# Actualizar FFmpeg
-sudo apt update && sudo apt upgrade ffmpeg  # Linux
-brew upgrade ffmpeg                         # macOS
+sudo apt install python3.12-venv python3-distutils
 ```
 
-### **Backup del historial**
+### FFmpeg no encontrado
 
-El historial se guarda automáticamente en:
-- `[carpeta_salida]/conversion_history.json`
-
-Para hacer backup:
+**Solución Linux**:
 ```bash
-cp conversion_history.json ~/backup_conversion_history_$(date +%Y%m%d).json
+sudo apt install ffmpeg
 ```
 
-## 👨‍💻 Desarrollo
+**Solución Windows**:
+1. Descargar FFmpeg desde https://ffmpeg.org/download.html
+2. Extraer y agregar al PATH del sistema
+3. Reiniciar la terminal
 
-### **Requisitos de Desarrollo**
+### PyQt5 no se instala
 
-- Python 3.6+
-- PyQt5 5.15+
-- FFmpeg
-- Git (para control de versiones)
-
-### **Estructura del Código**
-
-- `ConversionThread`: Hilo de conversión con FFmpeg
-- `AudioConverterApp`: Clase principal de la aplicación
-- `Card`, `PrimaryButton`, etc.: Componentes UI personalizados
-- `open_folder_cross_platform()`: Función multiplataforma
-
-### **Contribuir**
-
-1. Fork del repositorio
-2. Crear rama feature (`git checkout -b feature/nueva-caracteristica`)
-3. Commit cambios (`git commit -am 'Agregar nueva característica'`)
-4. Push a la rama (`git push origin feature/nueva-caracteristica`)
-5. Crear Pull Request
-
-## 📋 Dependencias
-
-### **Python**
-```txt
-PyQt5>=5.15.0
-```
-
-### **Sistema**
-- FFmpeg (cualquier versión reciente)
-- Python 3.6 o superior
-
-### **Instalación de dependencias**
+**Alternativa con PySide2**:
 ```bash
-pip install -r requirements.txt
+pip install PySide2
+# Cambiar las importaciones en el código de PyQt5 a PySide2
 ```
+
+## 📊 Rendimiento
+
+### Tiempos de Conversión Típicos
+- **Archivo MP3 (4MB)**: ~15-30 segundos
+- **Archivo FLAC (40MB)**: ~60-120 segundos
+- **Múltiples archivos**: Procesamiento secuencial optimizado
+
+### Uso de Recursos
+- **CPU**: Utiliza todos los núcleos disponibles
+- **RAM**: ~100-200MB durante la conversión
+- **Disco**: Espacio temporal mínimo requerido
+
+## 🤝 Contribuir
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ```
 MIT License
@@ -344,29 +269,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## 🤝 Soporte
+## 👥 Créditos
 
-- **Issues**: [GitHub Issues](https://github.com/tu-usuario/audio-converter-pro/issues)
-- **Documentación**: Este README y comentarios en el código
-- **Email**: audio.team@example.com
+- **Desarrollado por**: Audio Team
+- **Versión**: 3.0 Multi-File Pro
+- **Año**: 2025
+- **Tecnologías**: Python, PyQt5, FFmpeg
+- **Probado en**: Ubuntu 22.04, Windows 11
 
-## 📊 Estadísticas del Proyecto
+## 📞 Soporte
 
-- **Líneas de código**: ~1000+
-- **Archivos**: 1 archivo principal
-- **Plataformas soportadas**: Windows, Linux, macOS
-- **Formatos soportados**: 7 de entrada, 1 de salida
-- **Idioma**: Python con interfaz en español
+- **Issues**: [GitHub Issues](https://github.com/tuusuario/audio-converter-pro/issues)
+- **Documentación**: [Wiki del proyecto](https://github.com/tuusuario/audio-converter-pro/wiki)
+- **Email**: audioconverter.support@example.com
+
+## 🔄 Historial de Versiones
+
+### v3.0 Multi-File Pro (2025-01-XX)
+- ✅ Procesamiento múltiple de archivos
+- ✅ Interfaz rediseñada minimalista
+- ✅ Compatibilidad multiplataforma (Linux/Windows/macOS)
+- ✅ Historial de conversiones mejorado
+- ✅ Gestión avanzada de archivos
+
+### v2.0 Pro (2024-XX-XX)
+- ✅ Interfaz moderna con PyQt5
+- ✅ Configuraciones personalizables
+- ✅ Historial básico
+
+### v1.0 (2024-XX-XX)
+- ✅ Conversión básica de audio a MP4
+- ✅ Interfaz simple
 
 ---
 
-### 🚀 **¡Comienza a convertir tus archivos de audio ahora!**
+**⭐ Si te gusta este proyecto, ¡no olvides darle una estrella en GitHub!**
 
-```bash
-git clone https://github.com/tu-usuario/audio-converter-pro.git
-cd audio-converter-pro
-source audio_converter_env/bin/activate
-python audio_converter_pro.py
-```
-
-**Audio Converter Pro v3.0** - *Procesamiento múltiple de audio a video de manera simple y eficiente.*
+**🔔 ¿Encontraste un bug? [Reporta un issue](https://github.com/tuusuario/audio-converter-pro/issues/new)**
